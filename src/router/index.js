@@ -46,68 +46,255 @@ export const constantRoutes = [
     path: '/',
     component: Layout,
     redirect: '/bidding',
+    hidden: true,
     children: [
       {
-        path: 'bidding',
-        name: 'bidding',
-        component: () => import('@/views/bidding/index'),
-        meta: { title: '竞价推广', }
-      },
-      {
-        path: '/brand',
-        name: 'brand',
-        component: () => import('@/views/brand/index'),
-        meta: { title: '品牌推广', }
-      },
-      {
-        path: '/source',
-        name: 'source',
-        component: () => import('@/views/source/index'),
-        meta: { title: '素材', }
+        path: 'dashboard',
+        name: 'dashboard',
+        component: () => import('@/views/dashboard/index'),
+        meta: { title: '工作台', icon: 'el-icon-pie-chart' }
       },
       {
         path: '/report',
         name: 'report',
         component: () => import('@/views/report/index'),
-        meta: { title: '报表', },
+        meta: { title: '动态', icon: 'el-icon-mobile' },
         children: [
           {
             path: 'account',
             name: 'account',
             component: () => import('@/views/report/account'),
-            meta: { title: '账户报表', }
+            meta: { title: '动态列表', }
           },
           {
             path: 'empty',
             name: 'reportEmpty',
             component: () => import('@/views/report/empty'),
-            meta: { title: '账户报表', }
+            meta: { title: '新手推荐', }
           },
         ]
       },
       {
-        path: '/property',
-        name: 'property',
-        component: () => import('@/views/property/index'),
-        meta: { title: '资产', }
+        path: '/report',
+        name: 'report',
+        component: () => import('@/views/report/index'),
+        meta: { title: '用户管理', },
+        children: [
+          {
+            path: 'account',
+            name: 'account',
+            component: () => import('@/views/report/account'),
+            meta: { title: '会员权益', }
+          },
+          {
+            path: 'empty',
+            name: 'reportEmpty',
+            component: () => import('@/views/report/empty'),
+            meta: { title: '用户列表', }
+          },
+        ]
+      },
+      {
+        path: '/report',
+        name: 'report',
+        component: () => import('@/views/report/index'),
+        meta: { title: '话题', },
+        children: [
+          {
+            path: 'account',
+            name: 'account',
+            component: () => import('@/views/report/account'),
+            meta: { title: '话题列表', }
+          },
+          {
+            path: 'empty',
+            name: 'reportEmpty',
+            component: () => import('@/views/report/empty'),
+            meta: { title: '话题分类', }
+          },
+        ]
+      },
+      {
+        path: '/report',
+        name: 'report',
+        component: () => import('@/views/report/index'),
+        meta: { title: '文章', },
+        children: [
+          {
+            path: 'account',
+            name: 'account',
+            component: () => import('@/views/report/account'),
+            meta: { title: '文章列表', }
+          },
+          {
+            path: 'empty',
+            name: 'reportEmpty',
+            component: () => import('@/views/report/empty'),
+            meta: { title: '文章分类', }
+          },
+        ]
+      },
+      {
+        path: '/report',
+        name: 'report',
+        component: () => import('@/views/report/index'),
+        meta: { title: '科普', },
+        children: [
+          {
+            path: 'account',
+            name: 'account',
+            component: () => import('@/views/report/account'),
+            meta: { title: '科普列表', }
+          },
+          {
+            path: 'empty',
+            name: 'reportEmpty',
+            component: () => import('@/views/report/empty'),
+            meta: { title: '科普分类', }
+          },
+        ]
+      },
+      {
+        path: 'bidding',
+        name: 'bidding',
+        component: () => import('@/views/bidding/index'),
+        meta: { title: 'CP列表', }
+      },
+      {
+        path: '/brand',
+        name: 'brand',
+        component: () => import('@/views/brand/index'),
+        meta: { title: '排行榜', }
+      },
+      {
+        path: '/report',
+        name: 'report',
+        component: () => import('@/views/report/index'),
+        meta: { title: '客服管理', },
+        children: [
+          {
+            path: 'account',
+            name: 'account',
+            component: () => import('@/views/report/account'),
+            meta: { title: '即时会话', }
+          },
+          {
+            path: 'empty',
+            name: 'reportEmpty',
+            component: () => import('@/views/report/empty'),
+            meta: { title: '历史会话', }
+          },
+          {
+            path: 'account',
+            name: 'account',
+            component: () => import('@/views/report/account'),
+            meta: { title: '客服列表', }
+          },
+          {
+            path: 'empty',
+            name: 'reportEmpty',
+            component: () => import('@/views/report/empty'),
+            meta: { title: '客服分组', }
+          },
+          {
+            path: 'empty',
+            name: 'reportEmpty',
+            component: () => import('@/views/report/empty'),
+            meta: { title: '客服自动回复', }
+          },
+        ]
+      },
+      {
+        path: '/source',
+        name: 'source',
+        component: () => import('@/views/source/index'),
+        meta: { title: '代理商', }
+      },
+      {
+        path: '/report',
+        name: 'report',
+        component: () => import('@/views/report/index'),
+        meta: { title: '财务', },
+        children: [
+          {
+            path: 'account',
+            name: 'account',
+            component: () => import('@/views/report/account'),
+            meta: { title: '订单管理', }
+          },
+          {
+            path: 'empty',
+            name: 'reportEmpty',
+            component: () => import('@/views/report/empty'),
+            meta: { title: '交易概况', }
+          },
+          {
+            path: 'empty',
+            name: 'reportEmpty',
+            component: () => import('@/views/report/empty'),
+            meta: { title: '代理商待结算', }
+          },
+          {
+            path: 'empty',
+            name: 'reportEmpty',
+            component: () => import('@/views/report/empty'),
+            meta: { title: '代理商历史佣金', }
+          },
+        ]
       },
       {
         path: '/tool',
         name: 'tool',
         component: () => import('@/views/tool/index'),
-        meta: { title: '工具', },
+        meta: { title: '运营管理', },
         children: [
           {
             path: 'comment',
             name: 'comment',
             component: () => import('@/views/tool/comment'),
-            meta: { title: '评论内容', }
+            meta: { title: '背景列表', }
           },
           {
             path: 'empty',
             name: 'toolEmpty',
             component: () => import('@/views/tool/empty'),
-            meta: { title: '评论内容', }
+            meta: { title: '背包列表', }
+          },
+          {
+            path: 'comment',
+            name: 'comment',
+            component: () => import('@/views/tool/comment'),
+            meta: { title: '礼物列表', }
+          },
+          {
+            path: 'empty',
+            name: 'toolEmpty',
+            component: () => import('@/views/tool/empty'),
+            meta: { title: '装扮列表', }
+          },
+          {
+            path: 'comment',
+            name: 'comment',
+            component: () => import('@/views/tool/comment'),
+            meta: { title: '动态列表', }
+          },
+          {
+            path: 'empty',
+            name: 'toolEmpty',
+            component: () => import('@/views/tool/empty'),
+            meta: { title: '举报列表', }
+          },
+          {
+            path: 'comment',
+            name: 'comment',
+            component: () => import('@/views/tool/comment'),
+            meta: { title: '趣味问题', }
+          },
+          {
+            path: 'empty',
+            name: 'toolEmpty',
+            component: () => import('@/views/tool/empty'),
+            meta: { title: '人格测试', }
           },
         ]
       },
@@ -115,37 +302,19 @@ export const constantRoutes = [
         path: '/finance',
         name: 'finance',
         component: () => import('@/views/finance/index'),
-        meta: { title: '财务', },
+        meta: { title: '设置', },
         children: [
           {
-            path: 'wallet',
+            path: '/finance/wallet',
             name: 'wallet',
             component: () => import('@/views/finance/wallet'),
-            meta: { title: '资金钱包', }
+            meta: { title: '员工管理', }
           },
           {
             path: 'account',
             name: 'financeAccount',
             component: () => import('@/views/finance/account'),
-            meta: { title: '财务流水', }
-          },
-          {
-            path: 'recharge',
-            name: 'recharge',
-            component: () => import('@/views/finance/recharge'),
-            meta: { title: '充值记录', }
-          },
-          {
-            path: 'swiftcode',
-            name: 'swiftcode',
-            component: () => import('@/views/finance/swiftcode'),
-            meta: { title: '汇款码记录', }
-          },
-          {
-            path: 'bond',
-            name: 'bond',
-            component: () => import('@/views/finance/bond'),
-            meta: { title: '保证金缴纳记录', }
+            meta: { title: '角色管理', }
           },
         ]
       },

@@ -4,7 +4,7 @@
             评论
         </div> -->
         <div class="empty">
-            <img src="@/assets/permi.png" alt="">
+            <img src="@/assets/images/permi.png" alt="">
             暂无权限
         </div>
     </div>
