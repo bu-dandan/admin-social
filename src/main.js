@@ -5,10 +5,6 @@ import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/zh-CN' // lang i18n
 // import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 
-//引入echarts
-import * as echarts from "echarts";
-Vue.prototype.$echarts = echarts;
-
 import '@/assets/styles/index.scss' // global css
 
 import App from './App'

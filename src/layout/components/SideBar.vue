@@ -1,10 +1,11 @@
 <template>
-    <div>
+    <div class="menu-bar">
         <el-menu
             default-active="2"
             class="el-menu-vertical-demo"
             background-color="#fff"
             text-color="#000"
+            :unique-opened="true"
             active-text-color="#2f88ff"
             router>
             <SideItem :tree="routes"> </SideItem>
@@ -38,24 +39,23 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.el-menu-vertical-demo {
+    height: 100%;
+}
+
 ::v-deep .el-menu {
     border: none;
+}
 
-    .el-menu-item:hover,
-    .el-submenu__title:hover {
-        background-color: #f0f2f7 !important
-    }
+.menu-bar {
+    height: calc(100% - 50px);
+    overflow: auto;
+    // padding: 10px 0;
+}
 
-    .el-menu-item.is-active {
-        font-weight: 500;
-    }
-
-    .el-submenu__title,
-    .el-menu-item {
-        line-height: 46px;
-        height: 46px;
-        color: #333;
-    }
+::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0;
 }
 </style>
   

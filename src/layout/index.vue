@@ -6,7 +6,6 @@
       </div>
       <SideItem></SideItem>
     </div>
-
     <div class="top-nav">
       <div class="icon-list">
         <span class="el-icon-s-order"></span>
@@ -21,9 +20,9 @@
       </div>
     </div>
     <div class="main-container">
-      <el-main class="main-app">
+      <div class="main-app">
         <router-view />
-      </el-main>
+      </div>
     </div>
   </div>
 </template>
@@ -98,7 +97,7 @@ export default {
   position: relative;
   height: 100%;
   width: 100%;
-  min-width: 1000px;
+  min-width: 1200px;
 }
 
 .left-nav {
@@ -131,13 +130,14 @@ export default {
   align-items: center;
   color: #949ca3;
   font-size: 18px;
-  height: 46px;
+  height: 50px;
   background-color: #fff;
   z-index: 2000;
   width: 100%;
   min-width: 1000px;
-  left: 0;
-  position: fixed;
+  position: sticky;
+  right: 0;
+  top: 0;
   box-shadow: 0px 2px 6px rgba(160, 163, 164, 0.1);
 
   .icon-list {
@@ -204,8 +204,12 @@ export default {
 
 .main-container {
   background-color: #f6f7fa;
-  padding: 64px 0 0 200px;
-  height: 100%;
-  overflow: auto;
+  width: 100%;
+  padding-left: 200px;
+  min-height: calc(100% - 50px);
+
+  .main-app {
+    padding: 14px;
+  }
 }
 </style>
